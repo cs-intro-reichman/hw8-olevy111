@@ -59,17 +59,17 @@
         name = name.trim();
         for (int i = 0; i < follows.length; i++) {
             if (follows[i] != null && follows[i].equalsIgnoreCase(name)) {
-                return false;
+                return false; 
             }
         }
         for (int i = 0; i < follows.length; i++) {
             if (follows[i] == null) {
                 follows[i] = name;
                 fCount++;
-                return true;
+                return true; 
             }
         }
-        return false;
+        return false; 
     }
 
     /** Removes the given name from the follows list of this user. If successful, returns true.
