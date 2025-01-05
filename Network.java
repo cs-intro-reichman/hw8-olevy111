@@ -30,7 +30,7 @@ public class Network {
      *  Notice that the method receives a String, and returns a User object. */
     public User getUser(String name) {
         for (int i = 0; i < userCount; i++) {
-            if (users[i].getName().equals(name)) {
+            if (users[i].getName().equalsIgnoreCase(name)) {
                 return users[i];
             }
         }
@@ -75,21 +75,21 @@ public class Network {
         if (user == null) {
             return null;
         } 
-        User bestCandidate = null;
-        int maxMutuals = 0;
+        User bestUser = null;
+        int maxMutuals = -1;
         for (int i = 0; i < userCount; i++) {
-            if (users[i] != null && !user.follows(users[i].getName())) {
+            if (users[i] != null && !user.follows(users[i].getName()) && !users[i].getName().equals(name)) {
                 int mutuals = user.countMutual(users[i]);
                 if (mutuals > maxMutuals) {
                     maxMutuals = mutuals;
-                    bestCandidate = users[i];
+                    bestUser = users[i];
                 }
             }
         }
-        if (bestCandidate == null) {
+        if (bestUser == null) {
             return null;
         }
-        return bestCandidate.getName();
+        return bestUser.getName();
     }
 
     /** Computes and returns the name of the most popular user in this network: 
@@ -125,9 +125,9 @@ public class Network {
 
     // Returns a textual description of all the users in this network, and who they follow.
     public String toString() {
-        StringBuilder ans = new StringBuilder("Network:\n");
+        StringBuilder ans = new StringBuilder("Network:");
         for (int i = 0; i < userCount; i++) {
-            ans.append(users[i].toString()).append("\n");
+            ans.append("\n").append(users[i].toString().trim());
         }
         return ans.toString();
     }
