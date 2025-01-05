@@ -57,6 +57,9 @@
             return false;
         }
         name = name.trim();
+        if (name.equalsIgnoreCase(this.name)) {
+            return false; 
+        }
         for (int i = 0; i < follows.length; i++) {
             if (follows[i] != null && follows[i].equalsIgnoreCase(name)) {
                 return false; 
