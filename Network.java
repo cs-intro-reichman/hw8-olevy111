@@ -74,7 +74,7 @@ public class Network {
         User user = getUser(name);
         if (user == null) {
             return null;
-        }
+        } 
         User bestCandidate = null;
         int maxMutuals = 0;
         for (int i = 0; i < userCount; i++) {

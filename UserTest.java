@@ -19,7 +19,7 @@ public class UserTest {
         alex.addFollowee("Ben");
         alex.addFollowee("Neta");
         alex.addFollowee("Dana");
-        System.out.println(alex);
+        System.out.println(alex); 
 
         System.out.println("\n...Trying to add Ben again...");
         alex.addFollowee("Ben");    

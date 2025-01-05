@@ -24,7 +24,7 @@ public class NetworkTest {
         net.addUser("Zohar");
         net.addUser("Or");
         net.addUser("Uri");
-        net.addUser("Maya");
+        net.addUser("Maya"); 
 
         System.out.println("\n...Adding follows relationships...");
         net.addFollowee("Alex", "Keren");
