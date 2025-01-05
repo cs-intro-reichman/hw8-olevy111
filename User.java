@@ -53,22 +53,19 @@
     /** Makes this user follow the given name. If successful, returns true. 
      *  If this user already follows the given name, or if the follows list is full, does nothing and returns false; */
     public boolean addFollowee(String name) {
-        if (name.equalsIgnoreCase(this.name)) {
-            return false;
-        }
         for (int i = 0; i < follows.length; i++) {
             if (follows[i] != null && follows[i].equalsIgnoreCase(name)) {
-                return false;
-            } 
+                return false; 
+            }
         }
         for (int i = 0; i < follows.length; i++) {
             if (follows[i] == null) {
                 follows[i] = name;
                 fCount++;
-                return true;
+                return true; 
             }
         }
-        return false;
+        return false; 
     }
 
     /** Removes the given name from the follows list of this user. If successful, returns true.
