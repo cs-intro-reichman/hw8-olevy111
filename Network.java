@@ -122,17 +122,16 @@ public class Network {
         }
         return count;
     }
-
+    @Override
     // Returns a textual description of all the users in this network, and who they follow.
     public String toString() {
-        StringBuilder ans = new StringBuilder("Network:");
-        for (int i = 0; i < userCount; i++) {
-            ans.append("\n").append(users[i].getName()).append(" ->");
-            for (int j = 0; j < users[i].getfCount(); j++) {
-                ans.append(" ").append(users[i].getfFollows()[j]);
-            }
-            ans.append(" "); 
-        }
-        return ans.toString().trim();
+        String ans = "Network:";
+        for (int i = 0; i < users.length; i++) {
+           if (users[i] != null) {
+               ans += "\n";
+               ans += users[i].toString();
+           }
+    }
+    return ans;
     }
 }
