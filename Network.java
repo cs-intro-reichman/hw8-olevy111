@@ -127,8 +127,12 @@ public class Network {
     public String toString() {
         StringBuilder ans = new StringBuilder("Network:\n");
         for (int i = 0; i < userCount; i++) {
-            ans.append(users[i].toString()).append(" \n");
+            ans.append(users[i].getName()).append(" ->");
+            for (int j = 0; j < users[i].getfCount(); j++) {
+                ans.append(" ").append(users[i].getfFollows()[j]);
+            }
+            ans.append("\n");
         }
-        return ans.toString();
+        return ans.toString().trim(); 
     }
 }
